@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="en" class="govuk-template app-html-class"> <head><meta charset="utf-8"><title>Quick Start | NOT GOV.UK</title><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="blue"><link rel="icon" sizes="48x48" href="/assets/images/favicon.ico"><link rel="icon" sizes="any" href="/assets/images/favicon.svg" type="image/svg+xml"><link rel="mask-icon" href="/assets/images/govuk-icon-mask.svg" color="blue"><link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png"><link rel="manifest" href="/assets/manifest.json"><meta property="og:image" content="/assets/images/govuk-opengraph-image.png"><link rel="stylesheet" href="/my-govuk-site/_astro/about.DYtBX75R.css"></head><body class="govuk-template__body app-body-class"> <script type="module">document.body.className+=" js-enabled"+("noModule"in HTMLScriptElement.prototype?" govuk-frontend-supported":"");</script> <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a> <header class="govuk-header" data-module="govuk-header"> <div class="govuk-header__container govuk-width-container app-width-container"> <div class="govuk-header__logo" data-astro-cid-tvrurpns> <a href="/" class="govuk-header__link govuk-header__link--homepage" data-astro-cid-tvrurpns> <span class="govuk-header__logotype govuk-header__logotype--text" aria-label="NOT GOV.UK" data-astro-cid-tvrurpns> NOT GOV.UK </span> </a> </div>  <div class="govuk-header__content"> <nav aria-label="Menu" class="govuk-header__navigation"> <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" hidden>
+Menu
+</button> <ul id="navigation" class="govuk-header__navigation-list"> <li class="govuk-header__navigation-item "> <a class="govuk-header__link" href="/"> Home </a> </li><li class="govuk-header__navigation-item "> <a class="govuk-header__link" href="/about"> About </a> </li><li class="govuk-header__navigation-item "> <a class="govuk-header__link" href="/quickstart"> Quick Start </a> </li><li class="govuk-header__navigation-item "> <a class="govuk-header__link" href="https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md"> Components </a> </li> </ul> </nav> </div> </div> </header> <div class="govuk-width-container app-width-container">  <a href="/" class="govuk-back-link"> 
+Back
+ </a> <main class="govuk-main-wrapper app-main-class" id="main-content"> <h1 class="govuk-heading-xl">Quick Start Guide</h1> <p class="govuk-body-l">Get up and running with your GDS Design System website.</p> <h2 class="govuk-heading-l">Setup Instructions</h2> <div class="govuk-tabs" data-module="govuk-tabs" id="setup-tabs"> <h2 class="govuk-tabs__title"> Choose your platform </h2> <ul class="govuk-tabs__list"> <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"> <a class="govuk-tabs__tab" href="#macos"> macOS </a> </li><li class="govuk-tabs__list-item "> <a class="govuk-tabs__tab" href="#windows"> Windows </a> </li><li class="govuk-tabs__list-item "> <a class="govuk-tabs__tab" href="#linux"> Linux </a> </li> </ul>  <div class="govuk-tabs__panel " id="macos">  <div class="govuk-accordion" data-module="govuk-accordion" id="macos-accordion"> <div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="macos-accordion-heading-1"> Installing Dependencies </span> </h2> </div> <div id="macos-accordion-content-1" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li>Open the Terminal app. You can find it via Spotlight (press <strong>Cmd + Space</strong>, then type <code class="govuk-!-font-family-monospace">Terminal</code>).</li>
+
+      <li>Install <code class="govuk-!-font-family-monospace">nvm</code> (Node Version Manager):<br>
+        <code class="govuk-!-font-family-monospace">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash</code>
+      </li>
+
+      <li>Add the following lines to your shell config file:<br>
+        <ul>
+          <li>If you use Bash (default on older macOS):<br>
+            Open <code class="govuk-!-font-family-monospace">~/.bash_profile</code> by running:<br>
+            <code class="govuk-!-font-family-monospace">open -e ~/.bash_profile</code>
+          </li>
+          <li>If you use Zsh (default on newer macOS):<br>
+            Open <code class="govuk-!-font-family-monospace">~/.zshrc</code> by running:<br>
+            <code class="govuk-!-font-family-monospace">open -e ~/.zshrc</code>
+          </li>
+        </ul>
+        Then add:<br>
+        <code class="govuk-!-font-family-monospace">export NVM_DIR="$HOME/.nvm"</code><br>
+        <code class="govuk-!-font-family-monospace">[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; . "$NVM_DIR/nvm.sh"</code>
+      </li>
+
+      <li>Save the file and reload your terminal configuration by running:<br>
+        <code class="govuk-!-font-family-monospace">source ~/.zshrc</code><br>
+        or<br>
+        <code class="govuk-!-font-family-monospace">source ~/.bash_profile</code>
+      </li>
+
+      <li>Install the latest LTS version of Node.js (which includes npm):<br>
+        <code class="govuk-!-font-family-monospace">nvm install --lts</code>
+      </li>
+
+      <li>Use the LTS version now:<br>
+        <code class="govuk-!-font-family-monospace">nvm use --lts</code>
+      </li>
+
+      <li>Set it as the default version every time you open Terminal:<br>
+        <code class="govuk-!-font-family-monospace">nvm alias default lts/*</code>
+      </li>
+
+      <li>Confirm everything is working:<br>
+        <code class="govuk-!-font-family-monospace">node -v</code><br>
+        <code class="govuk-!-font-family-monospace">npm -v</code>
+      </li>
+    </ol></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="macos-accordion-heading-2"> Creating the Repository </span> </h2> </div> <div id="macos-accordion-content-2" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li>If you don’t already have <strong>Visual Studio Code</strong> installed, download it from 
+        <a href="https://code.visualstudio.com/" class="govuk-link" target="_blank">code.visualstudio.com</a>.<br>
+        Open the downloaded file and drag <code class="govuk-!-font-family-monospace">Visual Studio Code.app</code> into your <code class="govuk-!-font-family-monospace">Applications</code> folder.
+      </li>
+
+      <li>To make VS Code available from the Terminal as <code class="govuk-!-font-family-monospace">code</code>, open VS Code and press <strong>Cmd + Shift + P</strong>, then type:<br>
+        <code class="govuk-!-font-family-monospace">Shell Command: Install 'code' command in PATH</code> and hit Enter.
+      </li>
+
+      <li>Now you can open folders in VS Code from Terminal like this:<br>
+        <code class="govuk-!-font-family-monospace">code .</code>
+      </li>
+
+      <li>Go to <a href="https://github.com/new" class="govuk-link" target="_blank">github.com/new</a> and create a new repository:
+        <ul>
+          <li>Give it a name (e.g. <code class="govuk-!-font-family-monospace">my-project</code>)</li>
+          <li>Leave it public or private depending on your needs</li>
+          <li><strong>Do not</strong> initialise with a README, .gitignore, or license</li>
+          <li>Click <strong>Create repository</strong></li>
+        </ul>
+      </li>
+
+      <li>Open <strong>GitHub Desktop</strong>. If you don’t have it yet, download it from 
+        <a href="https://desktop.github.com/" class="govuk-link" target="_blank">desktop.github.com</a>.
+      </li>
+
+      <li>In GitHub Desktop, click <strong>Clone a repository</strong>, select the one you just created, and choose where to save it on your computer.</li>
+
+      <li>Once cloned, click <strong>Open in Visual Studio Code</strong>. (If not available, you can manually open VS Code and go to <code class="govuk-!-font-family-monospace">File → Open</code> to choose the folder.)</li>
+
+      <li>In the VS Code terminal (View → Terminal), run the following to scaffold a new GOV.UK Personal project inside the folder:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code>
+      </li>
+
+      <li>Follow the prompts (e.g. project name, template options). This creates a new directory for your project.</li>
+
+      <li>Change into the new project folder:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code>
+      </li>
+
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code>
+      </li>
+
+      <li>Start the development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code>
+      </li>
+
+      <li>Open your browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code>
+      </li>
+
+      <li>Start editing files in <code class="govuk-!-font-family-monospace">src/pages/</code> and see changes instantly!</li>
+    </ol></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="macos-accordion-heading-3"> Project Structure </span> </h2> </div> <div id="macos-accordion-content-3" class="govuk-accordion__section-content"> <div class="govuk-body"><pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">src/
+    ├── components/           # Reusable components
+    │   ├── govuk/           # GOV.UK Design System components  
+    │   ├── BaseHead.astro   # HTML head component
+    │   ├── Footer.astro     # Site footer
+    │   └── Navigation.astro # Site navigation
+    ├── layouts/             # Page layouts
+    │   └── BaseLayout.astro # Main page wrapper
+    ├── pages/              # Your website pages (auto-routing)
+    │   ├── index.astro     # Homepage (/)
+    │   ├── about.astro     # About page (/about)
+    │   └── [other pages]   # Add more pages here
+    ├── config/             # Site configuration
+    │   └── navigation.ts   # Navigation menu setup
+    └── styles/             # CSS and styling</pre></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="macos-accordion-heading-4"> Adding New Pages </span> </h2> </div> <div id="macos-accordion-content-4" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li>Create a new .astro file in <code class="govuk-!-font-family-monospace">src/pages/</code><br>
+          Example: <code class="govuk-!-font-family-monospace">src/pages/services.astro</code></li>
+      <li>Use the BaseLayout:
+          <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; margin: 8px 0; border-left: 4px solid #b1b4b6;">---
+          import BaseLayout from "../layouts/BaseLayout.astro";
+          ---
+          &lt;BaseLayout title="Services"&gt;
+            &lt;main class="govuk-main-wrapper" id="main-content"&gt;
+              &lt;h1 class="govuk-heading-xl"&gt;Services&lt;/h1&gt;
+              &lt;p class="govuk-body"&gt;Your content here...&lt;/p&gt;
+            &lt;/main&gt;
+          &lt;/BaseLayout&gt;</pre></li>
+                <li>The page will automatically be available at <code class="govuk-!-font-family-monospace">/services</code></li>
+                <li>Add to navigation in <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> if needed</li>
+    </ol></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="macos-accordion-heading-5"> Customising Your Site </span> </h2> </div> <div id="macos-accordion-content-5" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li><strong>Site branding:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Logo.astro</code> to change your site name/logo</li>
+      <li><strong>Navigation:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> to modify menu items</li>
+      <li><strong>Footer links:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Footer.astro</code> for footer content</li>
+      <li><strong>Site metadata:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/components/BaseHead.astro</code> for SEO settings</li>
+      <li><strong>Colors & styling:</strong><br>
+          GOV.UK Design System colors are built-in, but you can customise in <code class="govuk-!-font-family-monospace">src/styles/</code></li>
+    </ol></div> </div> </div> </div>  </div> <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="windows">  <div class="govuk-accordion" data-module="govuk-accordion" id="windows-accordion"> <div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="windows-accordion-heading-1"> Installing Dependencies </span> </h2> </div> <div id="windows-accordion-content-1" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li>Download and install <strong>Node.js</strong> from <a href="https://nodejs.org/" class="govuk-link" target="_blank">nodejs.org</a>.<br>
+        Choose the LTS (Long Term Support) version.</li>
+      <li>Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> as Administrator:<br>
+        Press <strong>Win + X</strong> and select "Windows PowerShell (Admin)" or "Command Prompt (Admin)"</li>
+      <li>Verify Node.js and npm are installed:<br>
+        <code class="govuk-!-font-family-monospace">node -v</code><br>
+        <code class="govuk-!-font-family-monospace">npm -v</code></li>
+      <li>Install or update npm to the latest version:<br>
+        <code class="govuk-!-font-family-monospace">npm install -g npm@latest</code></li>
+      <li>Create a new project using the GOV.UK Personal template:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code></li>
+      <li>Follow the prompts to set up your project</li>
+      <li>Navigate to your project folder:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code></li>
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code></li>
+      <li>Start the development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code></li>
+      <li>Open your browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code></li>
+    </ol></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="windows-accordion-heading-2"> Creating the Repository </span> </h2> </div> <div id="windows-accordion-content-2" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li>If you don’t already have <strong>Visual Studio Code</strong> installed, download it from 
+        <a href="https://code.visualstudio.com/" class="govuk-link" target="_blank">code.visualstudio.com</a>.<br>
+        Open the downloaded file and complete the setup, adding VS Code to PATH.
+      </li>
+
+      <li>Now you can open folders in VS Code from Terminal like this:<br>
+        <code class="govuk-!-font-family-monospace">code .</code>
+      </li>
+
+      <li>Go to <a href="https://github.com/new" class="govuk-link" target="_blank">github.com/new</a> and create a new repository:
+        <ul>
+          <li>Give it a name (e.g. <code class="govuk-!-font-family-monospace">my-project</code>)</li>
+          <li>Leave it public or private depending on your needs</li>
+          <li><strong>Do not</strong> initialise with a README, .gitignore, or license</li>
+          <li>Click <strong>Create repository</strong></li>
+        </ul>
+      </li>
+
+      <li>Open <strong>GitHub Desktop</strong>. If you don’t have it yet, download it from 
+        <a href="https://desktop.github.com/" class="govuk-link" target="_blank">desktop.github.com</a>.
+      </li>
+
+      <li>In GitHub Desktop, click <strong>Clone a repository</strong>, select the one you just created, and choose where to save it on your computer.</li>
+
+      <li>Once cloned, click <strong>Open in Visual Studio Code</strong>. (If not available, you can manually open VS Code and go to <code class="govuk-!-font-family-monospace">File → Open</code> to choose the folder.)</li>
+
+      <li>In the VS Code terminal (View → Terminal), run the following to scaffold a new GOV.UK Personal project inside the folder:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code>
+      </li>
+
+      <li>Follow the prompts (e.g. project name, template options). This creates a new directory for your project.</li>
+
+      <li>Change into the new project folder:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code>
+      </li>
+
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code>
+      </li>
+
+      <li>Start the development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code>
+      </li>
+
+      <li>Open your browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code>
+      </li>
+
+      <li>Start editing files in <code class="govuk-!-font-family-monospace">src/pages/</code> and see changes instantly!</li>
+    </ol></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="windows-accordion-heading-3"> Project Structure </span> </h2> </div> <div id="windows-accordion-content-3" class="govuk-accordion__section-content"> <div class="govuk-body"><pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">src/
+    ├── components/           # Reusable components
+    │   ├── govuk/           # GOV.UK Design System components  
+    │   ├── BaseHead.astro   # HTML head component
+    │   ├── Footer.astro     # Site footer
+    │   └── Navigation.astro # Site navigation
+    ├── layouts/             # Page layouts
+    │   └── BaseLayout.astro # Main page wrapper
+    ├── pages/              # Your website pages (auto-routing)
+    │   ├── index.astro     # Homepage (/)
+    │   ├── about.astro     # About page (/about)
+    │   └── [other pages]   # Add more pages here
+    ├── config/             # Site configuration
+    │   └── navigation.ts   # Navigation menu setup
+    └── styles/             # CSS and styling</pre></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="windows-accordion-heading-4"> Adding New Pages </span> </h2> </div> <div id="windows-accordion-content-4" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li>Create a new .astro file in <code class="govuk-!-font-family-monospace">src/pages/</code><br>
+          Example: <code class="govuk-!-font-family-monospace">src/pages/services.astro</code></li>
+      <li>Use the BaseLayout:
+          <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; margin: 8px 0; border-left: 4px solid #b1b4b6;">---
+          import BaseLayout from "../layouts/BaseLayout.astro";
+          ---
+          &lt;BaseLayout title="Services"&gt;
+            &lt;main class="govuk-main-wrapper" id="main-content"&gt;
+              &lt;h1 class="govuk-heading-xl"&gt;Services&lt;/h1&gt;
+              &lt;p class="govuk-body"&gt;Your content here...&lt;/p&gt;
+            &lt;/main&gt;
+          &lt;/BaseLayout&gt;</pre></li>
+                <li>The page will automatically be available at <code class="govuk-!-font-family-monospace">/services</code></li>
+                <li>Add to navigation in <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> if needed</li>
+    </ol></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="windows-accordion-heading-5"> Customising Your Site </span> </h2> </div> <div id="windows-accordion-content-5" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li><strong>Site branding:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Logo.astro</code> to change your site name/logo</li>
+      <li><strong>Navigation:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> to modify menu items</li>
+      <li><strong>Footer links:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Footer.astro</code> for footer content</li>
+      <li><strong>Site metadata:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/components/BaseHead.astro</code> for SEO settings</li>
+      <li><strong>Colors & styling:</strong><br>
+          GOV.UK Design System colors are built-in, but you can customise in <code class="govuk-!-font-family-monospace">src/styles/</code></li>
+    </ol></div> </div> </div> </div>  </div> <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="linux">  <div class="govuk-accordion" data-module="govuk-accordion" id="linux-accordion"> <div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="linux-accordion-heading-1"> Installing Dependencies </span> </h2> </div> <div id="linux-accordion-content-1" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li>Install Node.js using your package manager:<br>
+        <strong>Ubuntu/Debian:</strong><br>
+        <code class="govuk-!-font-family-monospace">curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -</code><br>
+        <code class="govuk-!-font-family-monospace">sudo apt-get install -y nodejs</code><br><br>
+        <strong>CentOS/RHEL/Fedora:</strong><br>
+        <code class="govuk-!-font-family-monospace">curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -</code><br>
+        <code class="govuk-!-font-family-monospace">sudo yum install -y nodejs</code><br><br>
+        <strong>Arch Linux:</strong><br>
+        <code class="govuk-!-font-family-monospace">sudo pacman -S nodejs npm</code></li>
+      <li>Verify installation:<br>
+        <code class="govuk-!-font-family-monospace">node -v</code><br>
+        <code class="govuk-!-font-family-monospace">npm -v</code></li>
+      <li>Create a new project:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code></li>
+      <li>Navigate to your project:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code></li>
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code></li>
+      <li>Start development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code></li>
+      <li>Open browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code></li>
+    </ol></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="linux-accordion-heading-2"> Creating the Repository </span> </h2> </div> <div id="linux-accordion-content-2" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li>If you don’t already have <strong>Visual Studio Code</strong> installed, download it from 
+        <a href="https://code.visualstudio.com/" class="govuk-link" target="_blank">code.visualstudio.com</a>.<br>
+        Open the downloaded file and drag <code class="govuk-!-font-family-monospace">Visual Studio Code.app</code> into your <code class="govuk-!-font-family-monospace">Applications</code> folder.
+      </li>
+
+      <li>To make VS Code available from the Terminal as <code class="govuk-!-font-family-monospace">code</code>, open VS Code and press <strong>Cmd + Shift + P</strong>, then type:<br>
+        <code class="govuk-!-font-family-monospace">Shell Command: Install 'code' command in PATH</code> and hit Enter.
+      </li>
+
+      <li>Now you can open folders in VS Code from Terminal like this:<br>
+        <code class="govuk-!-font-family-monospace">code .</code>
+      </li>
+
+      <li>Go to <a href="https://github.com/new" class="govuk-link" target="_blank">github.com/new</a> and create a new repository:
+        <ul>
+          <li>Give it a name (e.g. <code class="govuk-!-font-family-monospace">my-project</code>)</li>
+          <li>Leave it public or private depending on your needs</li>
+          <li><strong>Do not</strong> initialise with a README, .gitignore, or license</li>
+          <li>Click <strong>Create repository</strong></li>
+        </ul>
+      </li>
+
+      <li>Open <strong>GitHub Desktop</strong>. If you don’t have it yet, download it from 
+        <a href="https://desktop.github.com/" class="govuk-link" target="_blank">desktop.github.com</a>.
+      </li>
+
+      <li>In GitHub Desktop, click <strong>Clone a repository</strong>, select the one you just created, and choose where to save it on your computer.</li>
+
+      <li>Once cloned, click <strong>Open in Visual Studio Code</strong>. (If not available, you can manually open VS Code and go to <code class="govuk-!-font-family-monospace">File → Open</code> to choose the folder.)</li>
+
+      <li>In the VS Code terminal (View → Terminal), run the following to scaffold a new GOV.UK Personal project inside the folder:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code>
+      </li>
+
+      <li>Follow the prompts (e.g. project name, template options). This creates a new directory for your project.</li>
+
+      <li>Change into the new project folder:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code>
+      </li>
+
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code>
+      </li>
+
+      <li>Start the development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code>
+      </li>
+
+      <li>Open your browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code>
+      </li>
+
+      <li>Start editing files in <code class="govuk-!-font-family-monospace">src/pages/</code> and see changes instantly!</li>
+    </ol></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="linux-accordion-heading-3"> Project Structure </span> </h2> </div> <div id="linux-accordion-content-3" class="govuk-accordion__section-content"> <div class="govuk-body"><pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">src/
+    ├── components/           # Reusable components
+    │   ├── govuk/           # GOV.UK Design System components  
+    │   ├── BaseHead.astro   # HTML head component
+    │   ├── Footer.astro     # Site footer
+    │   └── Navigation.astro # Site navigation
+    ├── layouts/             # Page layouts
+    │   └── BaseLayout.astro # Main page wrapper
+    ├── pages/              # Your website pages (auto-routing)
+    │   ├── index.astro     # Homepage (/)
+    │   ├── about.astro     # About page (/about)
+    │   └── [other pages]   # Add more pages here
+    ├── config/             # Site configuration
+    │   └── navigation.ts   # Navigation menu setup
+    └── styles/             # CSS and styling</pre></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="linux-accordion-heading-4"> Adding New Pages </span> </h2> </div> <div id="linux-accordion-content-4" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li>Create a new .astro file in <code class="govuk-!-font-family-monospace">src/pages/</code><br>
+          Example: <code class="govuk-!-font-family-monospace">src/pages/services.astro</code></li>
+      <li>Use the BaseLayout:
+          <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; margin: 8px 0; border-left: 4px solid #b1b4b6;">---
+          import BaseLayout from "../layouts/BaseLayout.astro";
+          ---
+          &lt;BaseLayout title="Services"&gt;
+            &lt;main class="govuk-main-wrapper" id="main-content"&gt;
+              &lt;h1 class="govuk-heading-xl"&gt;Services&lt;/h1&gt;
+              &lt;p class="govuk-body"&gt;Your content here...&lt;/p&gt;
+            &lt;/main&gt;
+          &lt;/BaseLayout&gt;</pre></li>
+                <li>The page will automatically be available at <code class="govuk-!-font-family-monospace">/services</code></li>
+                <li>Add to navigation in <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> if needed</li>
+    </ol></div> </div> </div><div class="govuk-accordion__section"> <div class="govuk-accordion__section-header"> <h2 class="govuk-accordion__section-heading"> <span class="govuk-accordion__section-button" id="linux-accordion-heading-5"> Customising Your Site </span> </h2> </div> <div id="linux-accordion-content-5" class="govuk-accordion__section-content"> <div class="govuk-body"><ol class="govuk-list govuk-list--number">
+      <li><strong>Site branding:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Logo.astro</code> to change your site name/logo</li>
+      <li><strong>Navigation:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> to modify menu items</li>
+      <li><strong>Footer links:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Footer.astro</code> for footer content</li>
+      <li><strong>Site metadata:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/components/BaseHead.astro</code> for SEO settings</li>
+      <li><strong>Colors & styling:</strong><br>
+          GOV.UK Design System colors are built-in, but you can customise in <code class="govuk-!-font-family-monospace">src/styles/</code></li>
+    </ol></div> </div> </div> </div>  </div>  </div> <h2 class="govuk-heading-l">Next Steps</h2> <ul class="govuk-list govuk-list--bullet"> <li>Explore the <a class="govuk-link" href="https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md">components demo page</a></li> <li>Read the <a class="govuk-link" href="https://design-system.service.gov.uk/">GOV.UK Design System documentation</a></li> <li>Check out the <a class="govuk-link" href="https://github.com/leowilkin/govuk-personal">GitHub repository</a></li> <li>Deploy your site to <a class="govuk-link" href="https://pages.cloudflare.com/">Cloudflare Pages</a>, <a class="govuk-link" href="https://vercel.com/">Vercel</a>, or <a class="govuk-link" href="https://www.netlify.com/">Netlify</a></li> </ul> </main>  </div> <footer class="govuk-footer"> <div class="govuk-width-container"> <div class="govuk-footer__meta"> <div class="govuk-footer__meta-item govuk-footer__meta-item--grow"> <h2 class="govuk-visually-hidden">Support links</h2> <ul class="govuk-footer__inline-list"> <li class="govuk-footer__inline-list-item"> <a class="govuk-footer__link" href="https://github.com/leowilkin/govuk-personal/issues"> Help </a> </li><li class="govuk-footer__inline-list-item"> <a class="govuk-footer__link" href="/contact"> Contact </a> </li><li class="govuk-footer__inline-list-item"> <a class="govuk-footer__link" href="https://github.com/leowilkin/govuk-personal"> GitHub Repo </a> </li> </ul> <span class="govuk-footer__licence-description"> <p class="govuk-footer_license-logo"><b>MIT</b></p>
+All content is available under the
+<a class="govuk-footer__link" href="https://github.com/leowilkin/govuk-personal/blob/main/LICENSE" rel="license">MIT License</a>, except where otherwise stated
+</span> </div> <div class="govuk-footer__meta-item"> <a class="govuk-footer__link" href="https://github.com/leowilkin/govuk-personal/blob/main/LICENSE">
+© GDS with modifications from Leo Wilkin
+</a> </div> </div> </div> </footer> <script type="module" src="/assets/govuk-frontend.min.js"></script> <script type="module">
+    import { initAll } from '/assets/govuk-frontend.min.js'
+    initAll()
+  </script> <script async src="https://scripts.withcabin.com/hello.js"></script> </body> </html>
