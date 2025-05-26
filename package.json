@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "astro": "^5.8.0",
@@ -18,7 +20,9 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
     "@types/node": "^22.0.0",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.6.2"
   },
-  "author": "snerks"
+  "author": "snerks",
+  "homepage": "https://snerks.github.io/my-govuk-site/"
 }
