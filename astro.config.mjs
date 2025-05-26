@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://snerks.github.io',
-    base: '/my-govuk-site',
+    base: '/my-govuk-site/',
     redirects: {
         "/gh": "https://github.com/leowilkin/govuk-personal",
     }
