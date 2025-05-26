@@ -6,7 +6,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "NOT GOV.UK",
-  titleSeparator: " | "
+  titleSeparator: " | ",
 };
 
 export interface NavigationItem {
@@ -18,27 +18,28 @@ export interface NavigationItem {
 export const navigation: NavigationItem[] = [
   {
     label: "Home",
-    href: "/",
+    href: "${import.meta.env.BASE_URL}/",
   },
   {
     label: "About",
-    href: "/about",
+    href: "${import.meta.env.BASE_URL}/about",
   },
   {
     label: "Quick Start",
-    href: "/quickstart",
+    href: "${import.meta.env.BASE_URL}/quickstart",
   },
   {
     label: "Components",
     href: "https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md",
-  }
+  },
 ];
 
 export function getNavigationWithActive(currentPath: string): NavigationItem[] {
-  return navigation.map(item => ({
+  return navigation.map((item) => ({
     ...item,
-    active: currentPath === item.href || 
-            (item.href !== "/" && currentPath.startsWith(item.href))
+    active:
+      currentPath === item.href ||
+      (item.href !== "/" && currentPath.startsWith(item.href)),
   }));
 }
 
@@ -59,8 +60,8 @@ export const footerLinks: FooterLink[] = [
   },
   {
     label: "GitHub Repo",
-    href: "https://github.com/leowilkin/govuk-personal"
-  }
+    href: "https://github.com/leowilkin/govuk-personal",
+  },
 ];
 
 // LOGO (in header) CONFIG
