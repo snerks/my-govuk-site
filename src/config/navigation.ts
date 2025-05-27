@@ -18,15 +18,15 @@ export interface NavigationItem {
 export const navigation: NavigationItem[] = [
   {
     label: "Home",
-    href: "${import.meta.env.BASE_URL}/",
+    href: `${import.meta.env.BASE_URL}/`,
   },
   {
     label: "About",
-    href: "${import.meta.env.BASE_URL}/about",
+    href: `${import.meta.env.BASE_URL}/about`,
   },
   {
     label: "Quick Start",
-    href: "${import.meta.env.BASE_URL}/quickstart",
+    href: `${import.meta.env.BASE_URL}/quickstart`,
   },
   {
     label: "Components",
@@ -56,7 +56,7 @@ export const footerLinks: FooterLink[] = [
   },
   {
     label: "Contact",
-    href: "/contact",
+    href: `${import.meta.env.BASE_URL}/contact`,
   },
   {
     label: "GitHub Repo",
@@ -78,7 +78,7 @@ export interface LogoConfig {
 
 export const logoConfig: LogoConfig = {
   text: siteConfig.name,
-  href: "/",
+  href: `${import.meta.env.BASE_URL}/`,
   // Uncomment and configure to use a custom image instead of text
   // customImage: {
   //   src: "/assets/images/logo.png",
