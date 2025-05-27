@@ -39,7 +39,7 @@ export function getNavigationWithActive(currentPath: string): NavigationItem[] {
     ...item,
     active:
       currentPath === item.href ||
-      (item.href !== "/" && currentPath.startsWith(item.href)),
+      (item.href !== `${import.meta.env.BASE_URL}/` && currentPath.startsWith(item.href)),
   }));
 }
 
