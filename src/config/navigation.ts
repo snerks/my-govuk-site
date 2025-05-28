@@ -35,28 +35,28 @@ export const navigation: NavigationItem[] = [
 ];
 
 export function getNavigationWithActive(currentPath: string): NavigationItem[] {
-  console.log("Current path:", currentPath);
-  navigation.forEach((item) => {
-    console.log(`Checking item: ${item.label} with href: ${item.href}`);
-    console.log("currentPath === item.href", currentPath === item.href);
-    console.log(
-      "item.href !== `${import.meta.env.BASE_URL}/`",
-      item.href !== `${import.meta.env.BASE_URL}/`
-    );
-    console.log(
-      "currentPath.startsWith(item.href)",
-      currentPath.startsWith(item.href)
-    );
+  // console.log("Current path:", currentPath);
+  // navigation.forEach((item) => {
+  //   console.log(`Checking item: ${item.label} with href: ${item.href}`);
+  //   console.log("currentPath === item.href", currentPath === item.href);
+  //   console.log(
+  //     "item.href !== `${import.meta.env.BASE_URL}/`",
+  //     item.href !== `${import.meta.env.BASE_URL}/`
+  //   );
+  //   console.log(
+  //     "currentPath.startsWith(item.href)",
+  //     currentPath.startsWith(item.href)
+  //   );
 
-    if (item.href === `${import.meta.env.BASE_URL}/`) {
-      console.log("Skipping root path check for item:", item.label);
-    } else if (currentPath.startsWith(item.href)) {
-      console.log("Item is active:", item.label);
-    } else {
-      console.log("Item is not active:", item.label);
-    }
-    console.log("");
-  });
+  //   if (item.href === `${import.meta.env.BASE_URL}/`) {
+  //     console.log("Skipping root path check for item:", item.label);
+  //   } else if (currentPath.startsWith(item.href)) {
+  //     console.log("Item is active:", item.label);
+  //   } else {
+  //     console.log("Item is not active:", item.label);
+  //   }
+  //   console.log("");
+  // });
 
   return navigation.map((item) => ({
     ...item,
